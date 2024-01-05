@@ -14,7 +14,7 @@ video_id = video_url.split("=")[-1]
 language = input("Enter the language (en/ja):")
 
 transcripts = YouTubeTranscriptApi.get_transcript(video_id, languages=[language])
-combined_transcipts = " ".join([item['text'] for item in transcripts])
+combined_transcipts = " ".join([item['text'] for item in transcripts])[:10000]
 
 
 prompt = [
