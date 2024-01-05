@@ -16,7 +16,6 @@ language = input("Enter the language (en/ja):")
 transcripts = YouTubeTranscriptApi.get_transcript(video_id, languages=[language])
 combined_transcipts = " ".join([item['text'] for item in transcripts])[:10000]
 
-
 prompt = [
   {"role": "system", "content": "You are a helpful assistant. Summarize the video with its transcipt provided by user. Reply in the same language as the transcript"},
   {"role": "user", "content": combined_transcipts},
